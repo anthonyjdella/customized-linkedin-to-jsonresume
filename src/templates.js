@@ -30,7 +30,7 @@ export const resumeJsonTemplateStable = {
 
 /** @type {Required<ResumeSchemaLatest>} */
 export const resumeJsonTemplateLatest = {
-    $schema: 'https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json',
+    $schema: 'https://raw.githubusercontent.com/anthonyjdella/customized-resume-schema/main/schema.json',
     basics: {
         name: '',
         label: '',
@@ -54,6 +54,7 @@ export const resumeJsonTemplateLatest = {
     awards: [],
     certificates: [],
     publications: [],
+    leadership: [],
     skills: [],
     languages: [],
     interests: [],
@@ -61,7 +62,7 @@ export const resumeJsonTemplateLatest = {
     projects: [],
     meta: {
         version: 'v1.0.0',
-        canonical: 'https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json'
+        canonical: 'https://github.com/anthonyjdella/customized-resume-schema/blob/main/schema.json'
     }
 };
 

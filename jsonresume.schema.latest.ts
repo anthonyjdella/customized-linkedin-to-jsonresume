@@ -1,8 +1,8 @@
 /**
  * @file Represents the latest version of the schema that I'm willing to support / implement
  *   - Currently v1.0.0
- * @see https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json
- *  - Permalink of above: https://github.com/jsonresume/resume-schema/blob/8a5b3982f8e5b9f8840398e162a6e0c418d023da/schema.json
+ * @see https://github.com/anthonyjdella/customized-resume-schema/blob/main/schema.json
+ *  - Permalink of above: https://github.com/anthonyjdella/customized-resume-schema/blob/1ee57b86774e1afef68fec36a4868def1965653d/schema.json
  */
 
 // All of these imports are because the spec is the same for the sub-section in both stable and latest (this doc)
@@ -200,6 +200,25 @@ export interface Work {
      * e.g. https://twitter.com
      */
     url?: string;
+    /**
+     * Specify skills used during job
+     */
+    skills?: string[]
+}
+
+export interface Leadership {
+    /**
+     * Date of position, e.g. 2016
+     */
+    date?: Iso8601;
+    /**
+     * e.g. UX Club
+     */
+    organization?: string;
+    /**
+     * e.g. Treasurer
+     */
+    name?: string;
 }
 
 export interface ResumeSchemaLatest {
@@ -219,6 +238,10 @@ export interface ResumeSchemaLatest {
      * List any other languages you speak
      */
     languages?: Language[];
+        /**
+     * List any leadership positions
+     */
+    leadership?: Leadership[];
     /**
      * The schema version and any other tooling configuration lives here
      */
