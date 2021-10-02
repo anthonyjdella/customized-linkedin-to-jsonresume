@@ -4,6 +4,9 @@
 
 ---
 
+<details>
+  <summary>Click to expand README.md of the source repository!</summary>
+
 > An extremely easy-to-use browser extension for exporting your full LinkedIn Profile to a JSON Resume file or string.
 
 
@@ -168,3 +171,5 @@ This tool is not affiliated with LinkedIn in any manner. Intended use is to expo
 ## Attribution:
 Icon for browser extension:
  - [https://www.iconfinder.com/icons/95928/arrow_down_download_profile_icon](https://www.iconfinder.com/icons/95928/arrow_down_download_profile_icon)
+
+</details>
