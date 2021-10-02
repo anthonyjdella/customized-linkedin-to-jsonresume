@@ -855,21 +855,29 @@ window.LinkedinToResumeJson = (() => {
                 if (phoneNumbers && phoneNumbers.length) {
                     partialBasics.phone = noNullOrUndef(phoneNumbers[0].number);
                 }
+
+                /** @type {Partial<ResumeSchemaLatest['basics']>} */
+                const partialBasicsLatest = {
+                    location: _outputJsonStable.basics.location,
+                    url: 'htts://www.anthonydellavecchia.com',
+                    image: 'https://www.anthonydellavecchia.com/images/contact/avatar.png'
+                };
                 _outputJsonStable.basics = {
                     ..._outputJsonStable.basics,
                     ...partialBasics
                 };
                 _outputJsonLatest.basics = {
                     ..._outputJsonLatest.basics,
-                    ...partialBasics
+                    ...partialBasics,
+                    ...partialBasicsLatest
                 };
 
                 // Scrape Websites
                 if (Array.isArray(websites)) {
                     for (let x = 0; x < websites.length; x++) {
                         if (/portfolio/i.test(websites[x].type.category)) {
-                            _outputJsonStable.basics.website = websites[x].url;
-                            _outputJsonLatest.basics.url = websites[x].url;
+                            _outputJsonStable.basics.website = websites[0].url;
+                            _outputJsonLatest.basics.url = websites[0].url;
                         }
                     }
                 }
@@ -887,6 +895,20 @@ window.LinkedinToResumeJson = (() => {
                         _outputJsonLatest.basics.profiles.push(formattedProfile);
                     });
                 }
+
+                const partialBasicsProfilesGitHubLatest = {
+                    network: 'GitHub',
+                    username: 'anthonyjdella',
+                    url: 'https://github.com/anthonyjdella'
+                };
+
+                const partialBasicsProfilesWebsiteLatest = {
+                    network: 'www.AnthonyDellavecchia.com',
+                    username: 'Anthony Dellavecchia',
+                    url: 'https://www.anthonydellavecchia.com'
+                };
+
+                _outputJsonLatest.basics.profiles.push(partialBasicsProfilesGitHubLatest, partialBasicsProfilesWebsiteLatest);
                 return true;
             }
         } catch (e) {

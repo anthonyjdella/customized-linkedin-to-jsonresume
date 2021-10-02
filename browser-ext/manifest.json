@@ -1,6 +1,6 @@
 {
-    "name": "JSON Resume Exporter",
-    "description": "Export a profile page to JSON Resume",
+    "name": "Customized JSON Resume Exporter",
+    "description": "Based on my customized JSON Resume Schema. Export a profile page to JSON Resume",
     "manifest_version": 2,
     "icons": {
         "16": "icon-16.png",
