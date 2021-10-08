@@ -317,6 +317,14 @@ window.LinkedinToResumeJson = (() => {
             // let companyInfo = db.data[position.company['*miniCompany']];
         }
 
+        let endDate = ''
+        if (parsedWork.endDate == '' || parsedWork.endDate == undefined || parsedWork.endDate == null) {
+            endDate = 'present'
+        }
+        else {
+            endDate = parsedWork.endDate
+        }
+
         // Push to final json
         _outputJsonStable.work.push(parsedWork);
         _outputJsonLatest.work.push({
@@ -325,7 +333,7 @@ window.LinkedinToResumeJson = (() => {
             // This is description of company, not position
             // description: '',
             startDate: parsedWork.startDate,
-            endDate: parsedWork.endDate,
+            endDate: endDate,
             highlights: parsedWork.highlights,
             summary: parsedWork.summary,
             url: parsedWork.website
@@ -596,7 +604,6 @@ window.LinkedinToResumeJson = (() => {
                     summary: project.description,
                     url: project.url
                 };
-                parseAndAttachResumeDates(parsedProject, project);
                 _outputJsonLatest.projects.push(parsedProject);
             });
             resultSummary.sections.projects = _outputJsonLatest.projects.length ? 'success' : 'empty';
