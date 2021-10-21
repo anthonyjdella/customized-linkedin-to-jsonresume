@@ -866,8 +866,8 @@ window.LinkedinToResumeJson = (() => {
                 /** @type {Partial<ResumeSchemaLatest['basics']>} */
                 const partialBasicsLatest = {
                     location: _outputJsonStable.basics.location,
-                    url: 'htts://www.anthonydellavecchia.com',
-                    image: 'https://www.anthonydellavecchia.com/images/contact/avatar.png'
+                    url: '',
+                    image: ''
                 };
                 _outputJsonStable.basics = {
                     ..._outputJsonStable.basics,
@@ -909,13 +909,7 @@ window.LinkedinToResumeJson = (() => {
                     url: 'https://github.com/anthonyjdella'
                 };
 
-                const partialBasicsProfilesWebsiteLatest = {
-                    network: 'www.AnthonyDellavecchia.com',
-                    username: 'Anthony Dellavecchia',
-                    url: 'https://www.anthonydellavecchia.com'
-                };
-
-                _outputJsonLatest.basics.profiles.push(partialBasicsProfilesGitHubLatest, partialBasicsProfilesWebsiteLatest);
+                _outputJsonLatest.basics.profiles.push(partialBasicsProfilesGitHubLatest);
                 return true;
             }
         } catch (e) {
