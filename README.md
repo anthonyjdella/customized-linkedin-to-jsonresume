@@ -2,6 +2,31 @@
 
 🖼️ This is a slightly tweaked version of the [LinkedIn to JSON Resume Chrome Extension](https://github.com/joshuatz/linkedin-to-jsonresume). That project is outdated because it isn't using the latest version of [JSON Schema](https://github.com/jsonresume/resume-schema). Furthermore, I have customized that schema myself, so I have to base this Chrome extension off of [my own schema](https://github.com/anthonyjdella/customized-resume-schema).
 
+
+## Build
+
+1. `npm install`
+2. Make a code change and then run `npm run build-browserext`, which will generate files in `./build-browserext`.
+3. `npm run package-browserext` will side-load the build as a ZIP in `webstore-zips` directory.
+4. If you want to do something else besides side-loading, read the original README.
+
+## Usage
+
+For local use:
+1. `npm run package-browserext` will side-load the build as a ZIP in `webstore-zips` directory.
+2. In Chrome, go to `chrome://extensions` then drag-n-drop the ZIP onto the browser. Note that developer mode must be turned on.
+3. Go to your LinkedIn profile, i.e. `www.linkedin.com/in/anthonydellavecchia` and click on `LinkedIn Profile to JSON` button.
+4. After a second or two, JSON will be generated. Copy this, as it is a raw/pre-transformation version.
+5. Note that in the Chrome Extension, you can select either the custom version of the JSON schema that I created, or the last stable build from `v0.0.16` (mine is based on `v1.0.0`).
+
+## Design
+
+* `browser-ext/popup.html` holds the HTML for the Chrome Extension.
+* `jsonresume.scheama.latest.ts` is the latest schema from JSON Resume Schema (v1.0.0).
+* `jsonresume.scheama.stable.ts` is the stable but very outdated schema from JSON Resume Schema (v0.0.16).
+* `src/main.js` holds most of the JavaScript to get and transform data from LinkedIn.
+* `src/templates.js` holds the templates for the schema.
+
 ---
 
 <details>
